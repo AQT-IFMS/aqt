@@ -1,0 +1,102 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHEw9SvqLR6K0GOTRJNOnyjPpoUs-UZ68"></script>
+
+<dom-module id="aqt-mapa">
+  <template>
+    <style include="shared-styles">
+      :host {
+        
+        display: flex;
+        flex-direction: column warp;
+        align-items: stretch;
+        justify-content: space-around;
+        height:100%;
+      }     
+
+      #mapa{
+        position:static !important;
+        display: flex;
+        height: 100%;
+      }    
+    </style>
+
+    <div id="mapa" class="flex"></div>
+  </template>
+
+  <script>
+    class AqtMapa extends Polymer.Element {
+      static get is() { return 'aqt-mapa'; }
+
+      static get properties(){
+          return {
+            mapa: {
+              type: Object
+            },
+
+            pracas: {
+              type: Object
+            }  
+          }
+      }
+
+      iniciarMapa(){
+        const mapaEl = this.$.mapa;
+
+        this.mapa = new google.maps.Map(mapaEl, {
+          center: new google.maps.LatLng(-22.217427,-54.812534),
+          scrollwheel: true,
+          zoom: 14,
+          mapTypeId: 'terrain'
+        });        
+      }
+
+      posicionarMarcadores(){
+        const pracas = this.pracas;
+        const mapa = this.mapa;
+
+        const db = firebase.database();
+        const ref = db.ref('pracas');
+
+        ref.on('value', function(snapshotPracas){
+          var pracas = snapshotPracas.val().value;
+
+          for (var i = 0; i < pracas.features.length; i++) {
+            console.log(pracas.features[i]);
+
+            var coords = pracas.features[i].geometry.coordinates;
+            var latLng = new google.maps.LatLng(coords[0],coords[1]);
+
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: mapa,
+              title: pracas.features[i].properties.nome
+            });
+
+          }
+        });        
+      }
+
+      ready(){
+        super.ready();
+
+        this.iniciarMapa();
+        this.posicionarMarcadores();
+      }     
+    }
+
+    window.customElements.define(AqtMapa.is, AqtMapa);
+  </script>
+</dom-module>

@@ -1,0 +1,9 @@
+http://geojson.org/
+https://tools.ietf.org/html/rfc7946
+https://developers.google.com/maps/documentation/javascript/earthquakes
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+https://developers.google.com/maps/documentation/javascript/firebase
+https://developers.google.com/maps/documentation/javascript/markers?hl=pt-br
+
+
+https://github.com/falleiros/aqt

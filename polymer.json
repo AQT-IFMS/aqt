@@ -1,0 +1,31 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.html",
+  "fragments": [
+    "src/my-view1.html",
+    "src/my-view2.html",
+    "src/my-view404.html",
+    "src/lazy-resources.html"    
+  ],
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "builds": [{
+    "name": "bundled",
+    "bundle": true,
+    "js": {"minify": false, "compile": false},
+    "css": {"minify": false},
+    "html": {"minify": false},
+    "addServiceWorker": true,
+    "addPushManifest": true
+  }],
+  "extraDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/*.js"
+  ],
+  "lint": {
+    "rules": ["polymer-2"]
+  }
+}

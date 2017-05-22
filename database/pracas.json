@@ -4,11 +4,11 @@
     "value" : {
       "features" : [ {
         "geometry" : {
-          "coordinates" : [ -22.21788, -54.812421 ],
+          "coordinates" : [ -22.217453, -54.812518 ],
           "type" : "Point"
         },
         "properties" : {
-          "esportes" : [ "Futebol", "Volei", "Basquete" ],
+          "esportes" : [ "Futsal", "Voleibol", "Basquetebol","Corrida","Caminhada","Volei de Areia","Academia ao Ar Livre","Slackline","Peteca","Ponto de encontro de Corrida de Rua","Ponto de encontro de Ciclismo" ],
           "nome" : "Parque dos Ipês"
         },
         "type" : "Feature"
@@ -18,8 +18,58 @@
           "type" : "Point"
         },
         "properties" : {
-          "esportes" : [ "Futebol", "Basquete" ],
-          "nome" : "Praça do Lago"
+          "esportes" : [ "Futebol", "Basquetebol" ],
+          "nome" : "Praça do Parque do Lago"
+        },
+        "type" : "Feature"
+      },{
+        "geometry" : {
+          "coordinates" : [ -22.244424, -54.781942 ],
+          "type" : "Point"
+        },
+        "properties" : {
+          "esportes" : [ "Caminhada","Corrida","Academia ao Ar Livre" ],
+          "nome" : "Estádio Douradão"
+        },
+        "type" : "Feature"
+      },{
+        "geometry" : {
+          "coordinates" : [ -22.219143, -54.817903 ],
+          "type" : "Point"
+        },
+        "properties" : {
+          "esportes" : [ "Corrida", "Caminhada","Ponto de encontro de Ciclismo" ],
+          "nome" : "Escola Imaculada"
+        },
+        "type" : "Feature"
+      },{
+        "geometry" : {
+          "coordinates" : [ -22.221570, -54.820794 ],
+          "type" : "Point"
+        },
+        "properties" : {
+          "esportes" : [ "Futsal", "Volei de Areia","Voleibol","Corrida","Caminhada","Academia ao Ar Livre","Parquinho Infantil" ],
+          "nome" : "CEPPER I"
+        },
+        "type" : "Feature"
+      },{
+        "geometry" : {
+          "coordinates" : [ -22.213458, -54.835484 ],
+          "type" : "Point"
+        },
+        "properties" : {
+          "esportes" : [ "Futebol Americano", "Basquetebol","Skate","Futsal","Parquinho Infantil","Patins","Caminhada","Corrida" ],
+          "nome" : "Praça do Parque Alvorada"
+        },
+        "type" : "Feature"
+      },{
+        "geometry" : {
+          "coordinates" : [ -22.214967, -54.802794 ],
+          "type" : "Point"
+        },
+        "properties" : {
+          "esportes" : [ "Futsal", "Basquetebol","Voleibol","Caminhada","Corrida","Academia ao Ar Livre","Skate" ],
+          "nome" : "CEPPER II"
         },
         "type" : "Feature"
       } ],

@@ -76,14 +76,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           for (var i = 0; i < pracas.features.length; i++) {
             console.log(pracas.features[i]);
 
-            var coords = pracas.features[i].geometry.coordinates;
-            var latLng = new google.maps.LatLng(coords[0],coords[1]);
+            const coords = pracas.features[i].geometry.coordinates;
+            const latLng = new google.maps.LatLng(coords[0],coords[1]);
 
-            var marker = new google.maps.Marker({
+            const marker = new google.maps.Marker({
               position: latLng,
               map: mapa,
               title: pracas.features[i].properties.nome
             });
+
+
+            const contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 idstHeading" class="firstHeading">Parque dos Ipês</h1>'+
+      '<div id="bodyContent">'+
+      '<p>' + pracas.features[i].properties.info + '</p>'+
+      '<img src="' + pracas.features[i].properties.info + '" />'+
+      '</div>'+
+      '</div>';
+           const infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+           marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
 
           }
         });        

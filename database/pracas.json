@@ -9,7 +9,9 @@
         },
         "properties" : {
           "esportes" : [ "Futsal", "Voleibol", "Basquetebol","Corrida","Caminhada","Volei de Areia","Academia ao Ar Livre","Slackline","Peteca","Ponto de encontro de Corrida de Rua","Ponto de encontro de Ciclismo" ],
-          "nome" : "Parque dos Ipês"
+          "nome" : "Parque dos Ipês",
+          "info": "parque dos ipes foi fundado em 1932",
+          "img": "ipes.jpg"
         },
         "type" : "Feature"
       }, {
